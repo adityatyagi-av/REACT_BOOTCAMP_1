@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <h1 id="head">Calculator</h1>
+    <div id="app">
+      <div id="result">
+        <input id="resultbar" type="text" value="" />
+      </div>
+      <div id="container">
+        <input class="inputButton slash char" type="button" value="C" onclick="clearval()" />
+        <input class="inputButton" type="button" value="1" onclick="getValue(1)" />
+        <input class="inputButton" type="button" value="2" onclick="getValue(2)"/>
+        <input class="inputButton slash" type="button" value="+" onclick="getValue('+')" />
+        <input class="inputButton" type="button" value="3" onclick="getValue(3)"/>
+        <input class="inputButton" type="button" value="4" onclick="getValue(4)"/>
+        <input class="inputButton" type="button" value="5" onclick="getValue(5)"/>
+        <input class="inputButton slash" type="button" value="-" onclick="getValue('-')"/>
+        <input class="inputButton" type="button" value="6" onclick="getValue(6)"/>
+        <input class="inputButton" type="button" value="7" onclick="getValue(7)"/>
+        <input class="inputButton" type="button" value="8" onclick="getValue(8)"/>
+        <input class="inputButton slash" type="button" value="*" onclick="getValue('*')"/>
+        <input class="inputButton" type="button" value="9" onclick="getValue(9)"/>
+        <input class="inputButton" type="button" value="0" onclick="getValue(0)" />
+        <input class="inputButton slash char" type="button" value="=" onClick="solve()"/>
+        <input class="inputButton slash" type="button" value="/" onclick="getValue('/')"/>
+      </div>
+    </div>
+  </body>
+  <script>
+    function getValue(x){
+        document.getElementById("resultbar").value+=x;    
+    }
+    function solve(){
+        
+        let x=document.getElementById("resultbar").value;
+        let solution =eval(x)
+        document.getElementById("resultbar").value=solution;
+    }
+    function clearval(){
+        document.getElementById("resultbar").value="";
+    }
+  </script>
+</html>

@@ -6,16 +6,16 @@
     <title>Document</title>
   </head>
   <body>
-    <h1>hello</h1>
     <div id="root">
-      <div id="content">
-        <h1 id="heading">aditya tyagi</h1>
-        <p id="para">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eligendi dignissimos molestias illum excepturi molestiae adipisci nobis libero, eveniet consequuntur numquam.</p>
-        
-      </div>
-     
+        <div id="content">
+            <h1 id="heading">
+
+            </h1>
+            <h2 id="heading2">
+
+            </h2>
+        </div>
     </div>
-    <footer>hey</footer>
   </body>
   <script
     crossorigin
@@ -26,16 +26,20 @@
     src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
   ></script>
   <script>
-    const heading =React.createElement("h1",{id: "heading"},"hey buddy")
-    const para=React.createElement("p",{
-      id:"para"
-    },"this is a paragraph")
-    const element=React.createElement("div",{id:"content"},[heading,para])
+    const heading =React.createElement("h1",{
+        id:"heading"
+    },"hey buddy")
+    const heading2 =React.createElement("h1",{
+        id:"heading2"
+    },"hello brother")
+    const content=React.createElement("div",{
+        id:"content"
+    },[heading,heading2])
     console.log(heading)
     const root =ReactDOM.createRoot(document.getElementById("root"));
     console.log(root)
 
     //passing a element inside the root
-    root.render(element)
+    root.render(content)
   </script>
 </html>
